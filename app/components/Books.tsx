@@ -6,7 +6,7 @@ import React from 'react'
 const Books = ({book}) => {
   return (
     <div>
-      <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm flex flex-col md:flex-row gap-6 items-center">
+      <div className="border border-gray-200 rounded-2xl my-10 p-6 bg-white shadow-sm flex flex-col md:flex-row gap-6 items-center ">
       {/* Left side: Book Image Container */}
       <div className="bg-[#f3f3f3] rounded-2xl p-6 flex justify-center items-center w-full md:w-60 h-60 shrink-0">
         <Image
