@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import "./globals.css";
+import BookProvider from "./context/bookContext";
 
 export const metadata: Metadata = {
   title: "Book Vibe",
@@ -16,8 +17,14 @@ export default function RootLayout({
     <html lang="en">
       {/* <body> ট্যাগ যুক্ত করা আবশ্যক */}
       <body className="bg-white text-gray-900 min-h-screen">
+        
         <Navbar />
-        <main>{children}</main>
+
+        <BookProvider>
+          <main>{children}</main>
+        </BookProvider>
+        
+
       </body>
     </html>
   );

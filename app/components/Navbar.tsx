@@ -13,6 +13,7 @@ export default function Navbar() {
   
   const renderLinks =[
       <li key="item-1" className="text-white"><Link href="/">Home</Link></li>,
+      <li key="item-1" className="text-white"><Link href="/books">Books</Link></li>,
       <li key="item-2 " className="text-white"><Link href="/listed-books">Listed Books</Link></li>,
       <li key="item-3" className="text-white"><Link href="/pages-to-read">Pages to Read</Link></li>
   ]

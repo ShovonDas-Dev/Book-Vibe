@@ -1,4 +1,5 @@
 
+import CardButton from '@/app/button/CardButton'
 import { Book } from '@/app/type/type'
 import Image from 'next/image'
 import React from 'react'
@@ -99,14 +100,7 @@ const CardDetails = async ({params}: {params: {id: string}}) => {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-4 mt-6">
-            <button className="btn border border-[#13131340] bg-white text-[#131313] hover:bg-gray-100 font-semibold px-7 py-3 rounded-xl transition-all">
-              Read
-            </button>
-            <button className="btn bg-[#50B1C9] hover:bg-[#3fa0b8] text-white font-semibold px-7 py-3 rounded-xl transition-all">
-              Wishlist
-            </button>
-          </div>
+              <CardButton book= {singleBook}/>
         </div>
       </div>
     </div>
