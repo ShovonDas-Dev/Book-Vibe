@@ -14,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       {/* <body> ট্যাগ যুক্ত করা আবশ্যক */}
-      <body className="bg-white text-gray-900 min-h-screen">
+      <body className="">
         
         <Navbar />
 
