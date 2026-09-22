@@ -13,24 +13,20 @@ const BookTab = () => {
     const context = useContext(booksContext)
     const { read, wishlist }: IBookTabProps = context ?? { read: [], wishlist: [] }
 
-    const [sort , setSort] = useState("ratng")
-    function sortBooks(book : Book[] ){
-        const books = [...book]
+    const [sort , setSort] = useState("rating")
+    const BookSorting = (book: Book[]) =>{
+        const sortedBooks = [...book]
         if(sort === "rating"){
-            books.sort((a,b)=> b.rating - a.rating)
+            sortedBooks.sort((a,b) => b.rating - a.rating)
         }else if(sort === "pages"){
-            books.sort((a,b) => b.totalPages - a.totalPages)
+            sortedBooks.sort((a,b)=> b.totalPages -a.totalPages)
         }else if(sort === "year"){
-            books.sort((a,b) => b.yearOfPublishing - a.yearOfPublishing )
+            sortedBooks.sort((a,b)=> b.yearOfPublishing - a.yearOfPublishing)
         }
-
-        return books
+        return sortedBooks
     }
-    console.log(sort)
-    
-    const sortReadBook = sortBooks(read)
-    const sortWIshlists = sortBooks(wishlist)
-
+    const sortReadBook = BookSorting(read)
+    const sortWishBook = BookSorting(wishlist)
     return (
         <>
             <div className='flex justify-center'>
@@ -39,7 +35,7 @@ const BookTab = () => {
                     <select
                     value={sort}
                     onChange={(e)=> 
-                        setSort(e.target.value as "rating" || "pages" || "year")
+                        setSort(e.target.value as "ration" || "pages" || "year")
                     }
                     defaultValue="Sort By" className="select">
                         <option disabled={true}>Sort By</option>
@@ -64,7 +60,7 @@ const BookTab = () => {
 
                 <input type="radio" name="my_tabs_3" className="tab" aria-label="Wishlist Books" defaultChecked />
                 <div className="tab-content border-base-300 p-6">
-                    {sortWIshlists.map((book, index) => (
+                    {sortWishBook.map((book, index) => (
                         <Books key={index} book={book} />
                     ))}
                 </div>

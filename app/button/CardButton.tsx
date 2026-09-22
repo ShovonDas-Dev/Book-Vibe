@@ -1,39 +1,42 @@
-
 'use client'
 
 import React, { useContext } from 'react'
 import { Book } from '../type/type'
 import { booksContext } from '../context/bookContext'
+import { toast } from 'react-toastify'
 
 interface BookProps {
   book: Book
 }
 
 const CardButton = ({ book }: BookProps) => {
-  const { setRead, setWishlist } = useContext(booksContext)
+  const {read, wishlist, setRead, setWishlist } = useContext(booksContext)
 
   const handleReadClick = () => {
-    setRead((prev) => {
-      const exist = prev.some((item) => item.bookId === book.bookId)
+     
+    const exist = read.some((item) => item.bookId === book.bookId)
 
-      if (exist) {
-        return prev
-      }
+  if (exist) {
+    toast.warning('This book is already in your Read List!')
+    return
+  }
 
-      return [...prev, book]
-    })
+  setRead([...read, book])
+  toast.success('Book added to your Read List!')
+    
+     
   }
 
   const handleWishlistClick = () => {
-    setWishlist((prev) => {
-      const exist = prev.some((item) => item.bookId === book.bookId)
+     const exist = wishlist.some((item) => item.bookId === book.bookId)
 
-      if (exist) {
-        return prev
-      }
+  if (exist) {
+    toast.warning('This book is already in your Wishlist!')
+    return
+  }
 
-      return [...prev, book]
-    })
+  setWishlist([...wishlist, book])
+  toast.success('Book added to your Wishlist!')
   }
 
   return (
@@ -58,4 +61,3 @@ const CardButton = ({ book }: BookProps) => {
 }
 
 export default CardButton
-

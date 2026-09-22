@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import BookProvider from "./context/bookContext";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Book Vibe",
@@ -17,13 +18,14 @@ export default function RootLayout({
     <html lang="en" data-theme="light">
       {/* <body> ট্যাগ যুক্ত করা আবশ্যক */}
       <body className="">
-        
+
         <Navbar />
 
         <BookProvider>
           <main>{children}</main>
+          <ToastContainer />
         </BookProvider>
-        
+
 
       </body>
     </html>
