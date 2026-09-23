@@ -16,17 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      {/* <body> ট্যাগ যুক্ত করা আবশ্যক */}
       <body className="">
-
         <Navbar />
 
         <BookProvider>
           <main>{children}</main>
           <ToastContainer />
         </BookProvider>
-
-
       </body>
     </html>
   );

@@ -12,15 +12,15 @@ const links = [
 export default function Navbar() {
   
   const renderLinks =[
-      <li key="item-1" className="text-white"><Link href="/">Home</Link></li>,
-      <li key="item-1" className="text-white"><Link href="/books">Books</Link></li>,
-      <li key="item-2 " className="text-white"><Link href="/listed-books">Listed Books</Link></li>,
-      <li key="item-3" className="text-white"><Link href="/pages-to-read">Pages to Read</Link></li>
+      <li key="item-1" className=""><Link href="/">Home</Link></li>,
+      <li key="item-1" className=""><Link href="/books">Books</Link></li>,
+      <li key="item-2 " className=""><Link href="/listed-books">Listed Books</Link></li>,
+      <li key="item-3" className=""><Link href="/pages-to-read">Pages to Read</Link></li>
   ]
 
   return (
     <section className="shadow-sm">
-          <div className="container mx-auto px-4 navbar bg-gray-500 ">
+          <div className="container mx-auto px-4 navbar  ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
